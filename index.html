@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京城十日志：沉浸式艺术体验</title>
+    <meta name="description" content="北京十日深度文化探索之旅，结合现代艺术与沉浸式体验。">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="loading-screen" id="loading">
+        <div class="loading-text serif-font">京城十日志</div>
+    </div>
+
+    <div class="progress-bar" id="progress"></div>
+
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <nav class="nav" id="nav">
+        <ul class="nav-links">
+            <li><a href="#planning" class="nav-link interactive">筹谋</a></li>
+            <li><a href="#stats" class="nav-link interactive">数据</a></li>
+            <li><a href="#itinerary" class="nav-link interactive">行程</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero-section" role="banner">
+        <div class="hero-bg-animation"></div>
+        <div class="hero-content">
+            <h1 id="main-title" class="hero-title serif-font">京城十日志</h1>
+            <p class="hero-subtitle">深度文化探索之旅</p>
+            <div class="hero-cta">
+                <a href="#planning" class="cta-button interactive">开启旅程</a>
+            </div>
+        </div>
+        <div class="scroll-down-indicator">向下滚动，开启旅程</div>
+    </header>
+
+    <div class="content-wrapper">
+        <main class="container" role="main">
+            <section class="section" id="planning" aria-labelledby="planning-title">
+                <div class="section-header fade-in">
+                    <h2 id="planning-title" class="section-title serif-font">行前筹谋</h2>
+                    <p class="section-subtitle">凡事预则立，不预则废。深度了解这些关键要素，将为您的京城之旅奠定成功基石。</p>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-card fade-in interactive">
+                        <svg class="info-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <h3 class="info-card-title">预约订票策略</h3>
+                        <p class="info-card-description">北京所有主要景点均需官方小程序实名预约，建议出行前7-15天开始预订。故宫、国博等热门景点需抢票，建议设置多个提醒。环球影城优速通票务必提前购买，可节省50%以上排队时间。</p>
+                        <div class="info-card-meta">
+                            <div class="meta-item">
+                                <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12,6 12,12 16,14"/>
+                                </svg>
+                                <span>提前7-15天</span>
+                            </div>
+                            <div class="meta-item">
+                                <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M9 11l3 3 8-8"/>
+                                </svg>
+                                <span>实名预约</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card fade-in interactive">
+                        <svg class="info-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9,22 9,12 15,12 15,22"/>
+                        </svg>
+                        <h3 class="info-card-title">交通出行规划</h3>
+                        <p class="info-card-description">七人团队出行建议采用"地铁+网约车+包车"组合方案。市内景点以地铁为主干线，短距离接驳使用网约车。长城、野生动物园等远郊景点包车前往，确保老人小孩舒适度。</p>
+                        <div class="info-card-meta">
+                            <div class="meta-item">
+                                <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                                <span>7人团队</span>
+                            </div>
+                            <div class="meta-item">
+                                <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M5 17L12 10L19 17"/>
+                                </svg>
+                                <span>组合方案</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card fade-in interactive">
+                        <svg class="info-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                            <path d="M12 8V2l-3 3-3-3v6c0 1.66 1.34 3 3 3s3-1.34 3-3zM3 14c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2v-6z"/>
+                        </svg>
+                        <h3 class="info-card-title">餐饮文化体验</h3>
+                        <p class="info-card-description">精选老字号与现代餐厅相结合，照顾三代人不同口味偏好。全聚德、四季民福体验正宗北京烤鸭，白家大院品味宫廷菜精髓，同时安排便民餐厅解决日常用餐需求。所有餐厅均需提前预订。</p>
+                        <div class="info-card-meta">
+                            <div class="meta-item">
+                                <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <span>老字号</span>
+                            </div>
+                            <div class="meta-item">
+                                <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="3"/>
+                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                                </svg>
+                                <span>提前预订</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card fade-in interactive">
+                        <svg class="info-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        <h3 class="info-card-title">住宿安排策略</h3>
+                        <p class="info-card-description">建议选择王府井或前门地区的连通房型酒店，方便照顾老人和小孩。酒店应具备无障碍设施、24小时医疗服务和中式早餐。位置优越，步行可达多个景点，减少舟车劳顿。</p>
+                        <div class="info-card-meta">
+                            <div class="meta-item">
+                                <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                </svg>
+                                <span>连通房型</span>
+                            </div>
+                            <div class="meta-item">
+                                <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M9 11l3 3L22 4"/>
+                                </svg>
+                                <span>无障碍设施</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card fade-in interactive">
+                        <svg class="info-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22,4 12,14.01 9,11.01"/>
+                        </svg>
+                        <h3 class="info-card-title">健康安全保障</h3>
+                        <p class="info-card-description">为老人和小孩准备常用药品清单，了解就近医院位置。购买适合的旅游保险，涵盖意外伤害和急性疾病。随身携带紧急联系卡，包含酒店地址、紧急电话等重要信息。</p>
+                        <div class="info-card-meta">
+                            <div class="meta-item">
+                                <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                                </svg>
+                                <span>医疗保障</span>
+                            </div>
+                            <div class="meta-item">
+                                <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14,2 14,8 20,8"/>
+                                    <line x1="16" y1="13" x2="8" y2="13"/>
+                                    <line x1="16" y1="17" x2="8" y2="17"/>
+                                    <polyline points="10,9 9,9 8,9"/>
+                                </svg>
+                                <span>保险清单</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card fade-in interactive">
+                        <svg class="info-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                        <h3 class="info-card-title">行李打包指南</h3>
+                        <p class="info-card-description">根据北京四季分明的气候特点，准备适合的服装。春秋季温差大需分层穿衣，夏季防晒用品必备，冬季保暖措施要充分。为老人准备舒适的步行鞋，为小孩准备娱乐用品和零食。</p>
+                        <div class="info-card-meta">
+                            <div class="meta-item">
+                                <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M12 2v20M2 12h20"/>
+                                </svg>
+                                <span>四季适配</span>
+                            </div>
+                            <div class="meta-item">
+                                <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                                <span>分层穿衣</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="stats-section" id="stats">
+                <div class="container">
+                    <h2 class="section-title serif-font" style="color: white; margin-bottom: 1rem;">旅程数据一览</h2>
+                    <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 3rem;">用数字诠释这场完美的京城之旅</p>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number serif-font" data-target="10">0</div>
+                            <div class="stat-label">精心安排的旅程天数</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number serif-font" data-target="15">0</div>
+                            <div class="stat-label">覆盖的文化景点</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number serif-font" data-target="7">0</div>
+                            <div class="stat-label">家庭成员全覆盖</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number serif-font" data-target="600">0</div>
+                            <div class="stat-label">故宫历史年数</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="itinerary" aria-labelledby="itinerary-title">
+                <div class="section-header fade-in">
+                    <h2 id="itinerary-title" class="section-title serif-font">逐日行记</h2>
+                    <p class="section-subtitle">十日光阴，层层递进，每一天都经过精心设计，确保体验的丰富性与节奏的合理性。</p>
+                </div>
+
+                <div class="day-timeline">
+                    <div class="day-card fade-in">
+                        <div class="day-header-sticky">
+                            <div class="day-header">
+                                <div class="day-number serif-font">Day 1</div>
+                                <div class="day-date">抵达日 · 初探京韵</div>
+                            </div>
+                        </div>
+                        <div class="day-content-wrapper">
+                            <h3 class="day-title serif-font">老城印象：胡同风情初体验</h3>
+                            <div class="day-schedule">
+                                <div class="schedule-item interactive">
+                                    <div class="schedule-time">傍晚</div>
+                                    <div class="schedule-content">
+                                        <div class="schedule-location">抵达与入住</div>
+                                        <div class="schedule-description">约晚上11:30抵达酒店，办理入住并稍作休整，为第二天的行程养精蓄锐。</div>
+                                    </div>
+                                </div>
+                                <div class="schedule-item interactive">
+                                    <div class="schedule-time">晚上</div>
+                                    <div class="schedule-content">
+                                        <div class="schedule-location">南锣鼓巷 & 后海</div>
+                                        <div class="schedule-description">安顿好后，若精力允许，可夜游南锣鼓巷，感受京城胡同的独特魅力，随后漫步后海或什刹海，欣赏宁静的夜景。</div>
+                                        <div class="schedule-highlights">
+                                            <span class="highlight-tag interactive">胡同夜游</span>
+                                            <span class="highlight-tag interactive">什刹海夜景</span>
+                                            <span class="highlight-tag interactive">老北京风情</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tips-section">
+                                <div class="tips-title">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    贴心提醒
+                                </div>
+                                <div class="tips-content">首日抵达较晚，行程安排轻松，以适应为主。请确保酒店入住顺利，并为家人准备好必要的洗漱用品。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-card fade-in">
+                        <div class="day-header-sticky">
+                            <div class="day-header">
+                                <div class="day-number serif-font">Day 2</div>
+                                <div class="day-date">共和国心脏 · 历史巡礼</div>
+                            </div>
+                        </div>
+                        <div class="day-content-wrapper">
+                            <h3 class="day-title serif-font">天安门广场与国家博物馆</h3>
+                            <div class="day-schedule">
+                                <div class="schedule-item interactive">
+                                    <div class="schedule-time">清晨</div>
+                                    <div class="schedule-content">
+                                        <div class="schedule-location">天安门广场升旗仪式</div>
+                                        <div class="schedule-description">早起前往天安门广场，观看庄严的国旗护卫队举行的升旗仪式，感受浓厚的爱国情怀。仪式结束后可参观毛主席纪念堂（需提前预约）。</div>
+                                        <div class="schedule-highlights">
+                                            <span class="highlight-tag interactive">升旗仪式</span>
+                                            <span class="highlight-tag interactive">庄严肃穆</span>
+                                            <span class="highlight-tag interactive">爱国教育</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="schedule-item interactive">
+                                    <div class="schedule-time">上午</div>
+                                    <div class="schedule-content">
+                                        <div class="schedule-location">中国国家博物馆</div>
+                                        <div class="schedule-description">参观中国国家博物馆，这里是中华文化的集大成之地。重点参观“古代中国”基本陈列，系统了解从远古时期到明清的中华文明发展脉络。</div>
+                                        <div class="schedule-highlights">
+                                            <span class="highlight-tag interactive">中华瑰宝</span>
+                                            <span class="highlight-tag interactive">历史长河</span>
+                                            <span class="highlight-tag interactive">文化盛宴</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tips-section">
+                                <div class="tips-title">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    参观要点
+                                </div>
+                                <div class="tips-content">天安门广场、毛主席纪念堂和国家博物馆均需提前进行实名预约。请务必提前规划，以免耽误行程。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-card fade-in">
+                        <div class="day-header-sticky">
+                            <div class="day-header">
+                                <div class="day-number serif-font">Day 3</div>
+                                <div class="day-date">紫禁之巅 · 皇城漫步</div>
+                            </div>
+                        </div>
+                        <div class="day-content-wrapper">
+                            <h3 class="day-title serif-font">故宫博物院深度探索</h3>
+                            <div class="day-schedule">
+                                <div class="schedule-item interactive">
+                                    <div class="schedule-time">全天</div>
+                                    <div class="schedule-content">
+                                        <div class="schedule-location">故宫博物院 & 景山公园</div>
+                                        <div class="schedule-description">安排一整天时间深度游览故宫博物院。从午门进入，沿着中轴线感受皇家气派，探索东西六宫的传奇故事。傍晚时分登上景山公园的万春亭，俯瞰金碧辉煌的紫禁城全景和北京中轴线。</div>
+                                        <div class="schedule-highlights">
+                                            <span class="highlight-tag interactive">皇家宫殿</span>
+                                            <span class="highlight-tag interactive">历史探秘</span>
+                                            <span class="highlight-tag interactive">紫禁城全景</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tips-section">
+                                <div class="tips-title">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    抢票提示
+                                </div>
+                                <div class="tips-content">故宫门票是北京最难抢的门票之一，务必提前7天在官方小程序上设置好提醒，于晚上8点准时抢票。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-card fade-in">
+                        <div class="day-header-sticky">
+                            <div class="day-header">
+                                <div class="day-number serif-font">Day 4</div>
+                                <div class="day-date">王府寻踪 · 泛舟北海</div>
+                            </div>
+                        </div>
+                        <div class="day-content-wrapper">
+                            <h3 class="day-title serif-font">恭王府与北海公园的闲适时光</h3>
+                            <div class="day-schedule">
+                                <div class="schedule-item interactive">
+                                    <div class="schedule-time">上午</div>
+                                    <div class="schedule-content">
+                                        <div class="schedule-location">恭王府</div>
+                                        <div class="schedule-description">参观清代规模最大的王府，这里曾是和珅的府邸，也是后来的恭亲王府。寻找“福”字碑，感受“一座恭王府，半部清代史”的独特魅力。</div>
+                                    </div>
+                                </div>
+                                <div class="schedule-item interactive">
+                                    <div class="schedule-time">下午</div>
+                                    <div class="schedule-content">
+                                        <div class="schedule-location">北海公园</div>
+                                        <div class="schedule-description">游览皇家园林北海公园，在标志性的白塔下，体验“让我们荡起双桨”的惬意，享受泛舟湖上的乐趣。</div>
+                                        <div class="schedule-highlights">
+                                            <span class="highlight-tag interactive">王府文化</span>
+                                            <span class="highlight-tag interactive">泛舟北海</span>
+                                            <span class="highlight-tag interactive">皇家园林</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="schedule-item interactive">
+                                    <div class="schedule-time">晚上</div>
+                                    <div class="schedule-content">
+                                        <div class="schedule-location">《功夫传奇》演出</div>
+                                        <div class="schedule-description">观看一场融合了中国功夫、杂技和舞蹈的精彩演出《功夫传奇》，感受中华武术的博大精深。</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-card fade-in">
+                        <div class="day-header-sticky">
+                            <div class="day-header">
+                                <div class="day-number serif-font">Day 5</div>
+                                <div class="day-date">雄关漫道 · 长城壮歌</div>
+                            </div>
+                        </div>
+                        <div class="day-content-wrapper">
+                            <h3 class="day-title serif-font">慕田峪长城：不到长城非好汉</h3>
+                            <div class="day-schedule">
+                                <div class="schedule-item interactive">
+                                    <div class="schedule-time">全天</div>
+                                    <div class="schedule-content">
+                                        <div class="schedule-location">慕田峪长城</div>
+                                        <div class="schedule-description">前往慕田峪长城，这里风景秀丽，敌楼密集，更适合有老人和孩子的家庭游览。推荐乘坐缆车上山，体验刺激的滑道下山，感受长城的雄伟与壮丽。</div>
+                                        <div class="schedule-highlights">
+                                            <span class="highlight-tag interactive">世界奇迹</span>
+                                            <span class="highlight-tag interactive">缆车+滑道</span>
+                                            <span class="highlight-tag interactive">家庭友好</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tips-section">
+                                <div class="tips-title">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    出行建议
+                                </div>
+                                <div class="tips-content">慕田峪长城距离市区较远，建议包车前往，可以更灵活地安排时间，节省体力，确保游览体验。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-card fade-in">
+                        <div class="day-header-sticky">
+                            <div class="day-header">
+                                <div class="day-number serif-font">Day 6</div>
+                                <div class="day-date">奇趣自然 · 野性呼唤</div>
+                            </div>
+                        </div>
+                        <div class="day-content-wrapper">
+                            <h3 class="day-title serif-font">北京野生动物园一日游</h3>
+                            <div class="day-schedule">
+                                <div class="schedule-item interactive">
+                                    <div class="schedule-time">全天</div>
+                                    <div class="schedule-content">
+                                        <div class="schedule-location">北京野生动物园</div>
+                                        <div class="schedule-description">安排一整天时间，带家人前往北京野生动物园。乘坐投喂车近距离观察猛兽，观看精彩的动物表演，与温顺的小动物互动，享受亲近自然的乐趣。</div>
+                                        <div class="schedule-highlights">
+                                            <span class="highlight-tag interactive">亲近自然</span>
+                                            <span class="highlight-tag interactive">动物互动</span>
+                                            <span class="highlight-tag interactive">家庭同乐</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="tips-section">
+                                <div class="tips-title">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    出行提示
+                                </div>
+                                <div class="tips-content">北京野生动物园同样距离市区遥远，建议包车前往，并合理规划一整天的游玩时间。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-card fade-in">
+                        <div class="day-header-sticky">
+                            <div class="day-header">
+                                <div class="day-number serif-font">Day 7</div>
+                                <div class="day-date">奇幻世界 · 尽享欢乐 (上)</div>
+                            </div>
+                        </div>
+                        <div class="day-content-wrapper">
+                            <h3 class="day-title serif-font">北京环球影城：畅游奇幻世界</h3>
+                            <div class="day-schedule">
+                                <div class="schedule-item interactive">
+                                    <div class="schedule-time">全天</div>
+                                    <div class="schedule-content">
+                                        <div class="schedule-location">北京环球影城</div>
+                                        <div class="schedule-description">开启为期两天的环球影城之旅！第一天重点体验哈利波特的魔法世界、变形金刚基地、功夫熊猫盖世之地等核心项目，感受电影世界的无穷魅力。</div>
+                                        <div class="schedule-highlights">
+                                            <span class="highlight-tag interactive">哈利波特</span>
+                                            <span class="highlight-tag interactive">变形金刚</span>
+                                            <span class="highlight-tag interactive">功夫熊猫</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tips-section">
+                                <div class="tips-title">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    游玩攻略
+                                </div>
+                                <div class="tips-content">旺季强烈建议购买“优速通”，可以大幅减少排队时间，极大地提升游玩体验。提前下载官方App，随时查看地图和项目等待时间。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-card fade-in">
+                        <div class="day-header-sticky">
+                            <div class="day-header">
+                                <div class="day-number serif-font">Day 8</div>
+                                <div class="day-date">奇幻世界 · 尽享欢乐 (下)</div>
+                            </div>
+                        </div>
+                        <div class="day-content-wrapper">
+                            <h3 class="day-title serif-font">北京环球影城：重温经典与精彩表演</h3>
+                            <div class="day-schedule">
+                                <div class="schedule-item interactive">
+                                    <div class="schedule-time">全天</div>
+                                    <div class="schedule-content">
+                                        <div class="schedule-location">北京环球影城</div>
+                                        <div class="schedule-description">环球影城第二天！可以重温喜爱的项目，查漏补缺。千万不要错过精彩的花车巡游和震撼的“未来水世界”特技表演。晚上在园区内的特色主题餐厅享用晚餐。</div>
+                                        <div class="schedule-highlights">
+                                            <span class="highlight-tag interactive">花车巡游</span>
+                                            <span class="highlight-tag interactive">未来水世界</span>
+                                            <span class="highlight-tag interactive">主题晚餐</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-card fade-in">
+                        <div class="day-header-sticky">
+                            <div class="day-header">
+                                <div class="day-number serif-font">Day 9</div>
+                                <div class="day-date">皇家园林 · 学府风采</div>
+                            </div>
+                        </div>
+                        <div class="day-content-wrapper">
+                            <h3 class="day-title serif-font">颐和园与高等学府</h3>
+                            <div class="day-schedule">
+                                <div class="schedule-item interactive">
+                                    <div class="schedule-time">上午</div>
+                                    <div class="schedule-content">
+                                        <div class="schedule-location">颐和园</div>
+                                        <div class="schedule-description">游览中国现存规模最大、保存最完整的皇家园林——颐和园。漫步长廊，泛舟昆明湖，感受慈禧太后夏日行宫的奢华与秀美。</div>
+                                    </div>
+                                </div>
+                                <div class="schedule-item interactive">
+                                    <div class="schedule-time">下午</div>
+                                    <div class="schedule-content">
+                                        <div class="schedule-location">北京大学/清华大学</div>
+                                        <div class="schedule-description">参观中国顶尖学府北京大学或清华大学，感受百年名校的学术氛围和美丽校园。</div>
+                                         <div class="schedule-highlights">
+                                            <span class="highlight-tag interactive">皇家园林</span>
+                                            <span class="highlight-tag interactive">百年学府</span>
+                                            <span class="highlight-tag interactive">学术氛围</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="tips-section">
+                                <div class="tips-title">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    预约提醒
+                                </div>
+                                <div class="tips-content">大学参观预约竞争非常激烈，需要密切关注官方放号时间，提前抢订。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-card fade-in">
+                        <div class="day-header-sticky">
+                            <div class="day-header">
+                                <div class="day-number serif-font">Day 10</div>
+                                <div class="day-date">科技之光 · 告别京华</div>
+                            </div>
+                        </div>
+                        <div class="day-content-wrapper">
+                            <h3 class="day-title serif-font">科技馆与奥运公园之旅</h3>
+                            <div class="day-schedule">
+                                <div class="schedule-item interactive">
+                                    <div class="schedule-time">上午</div>
+                                    <div class="schedule-content">
+                                        <div class="schedule-location">中国科学技术馆</div>
+                                        <div class="schedule-description">带领家人，特别是孩子们参观中国科学技术馆，通过有趣的互动展项探索科学的奥秘，激发对科学的兴趣。</div>
+                                    </div>
+                                </div>
+                                <div class="schedule-item interactive">
+                                    <div class="schedule-time">下午</div>
+                                    <div class="schedule-content">
+                                        <div class="schedule-location">奥林匹克公园</div>
+                                        <div class="schedule-description">游览奥林匹克公园，近距离观赏鸟巢（国家体育场）和水立方（国家游泳中心）的宏伟建筑，感受2008年北京奥运会的辉煌。</div>
+                                    </div>
+                                </div>
+                                <div class="schedule-item interactive">
+                                    <div class="schedule-time">晚上</div>
+                                    <div class="schedule-content">
+                                        <div class="schedule-location">准备返程</div>
+                                        <div class="schedule-description">根据您的航班或火车时间，安排前往机场或火车站，结束愉快的北京十日深度文化之旅。</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer" role="contentinfo">
+            <div class="footer-content container fade-in">
+                <p class="footer-quote serif-font">"旅行，是让家人间的爱流动起来的最好方式，<br>而北京，则是承载这份厚重情感的最佳容器。"</p>
+                <div class="footer-sub">愿这次京城之旅，成为您家族记忆中最璀璨的篇章。</div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/TextPlugin.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>

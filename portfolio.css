@@ -353,6 +353,35 @@ body {
 .quote { font-size: 1.25rem; font-style: italic; color: var(--text-dim); margin-bottom: 30px; }
 .brand-signature { font-weight: 800; font-size: 1.1rem; }
 
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.social-icon-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    transition: 0.3s cubic-bezier(0.2, 0, 0, 1);
+    width: fit-content;
+}
+
+.social-icon-btn:hover {
+    color: var(--text);
+    background: var(--border);
+    transform: translateX(4px);
+    border-color: var(--text-dim);
+}
+
 /* Footer */
 .main-footer { padding-top: 100px; }
 .footer-line { height: 1px; background: var(--border); margin-bottom: 40px; }

@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="portfolio.css">
 </head>
 <body>
-    <!-- 极光网格背景 -->
-    <div class="mesh-gradient"></div>
+    <!-- 设计线条背景 -->
+    <div class="grid-overlay"></div>
     <div class="noise-overlay"></div>
 
     <div class="app-container">
@@ -20,7 +20,7 @@
         <nav class="side-nav">
             <div class="logo">MJ</div>
             <div class="nav-items">
-                <a href="#home" class="nav-item active">Home</a>
+                <a href="#home" class="nav-item">Home</a>
                 <a href="#skills" class="nav-item">Skills</a>
                 <a href="#projects" class="nav-item">Works</a>
                 <a href="#about" class="nav-item">About</a>
@@ -172,8 +172,14 @@
                 <div class="footer-content">
                     <p>© 2024 MJ. Designed for the future.</p>
                     <div class="footer-links">
-                        <a href="https://github.com/saudademjj">GitHub</a>
-                        <a href="mailto:www616066586@126.com">Contact</a>
+                        <a href="https://github.com/saudademjj" target="_blank" class="social-icon-btn">
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="mailto:www616066586@126.com" class="social-icon-btn">
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <span>Contact</span>
+                        </a>
                     </div>
                 </div>
             </footer>
@@ -195,6 +201,31 @@
         }, observerOptions);
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // ScrollSpy Logic: 修复侧边栏高亮问题
+        const navItems = document.querySelectorAll('.nav-item');
+        const sections = document.querySelectorAll('section');
+
+        function scrollSpy() {
+            let currentSectionId = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 200) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href').slice(1) === currentSectionId) {
+                    item.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', scrollSpy);
+        window.addEventListener('load', scrollSpy);
     </script>
 </body>
 </html>

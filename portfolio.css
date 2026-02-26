@@ -1,7 +1,7 @@
 :root {
-    --bg: #ffffff;
+    --bg: #f8f9fa; /* 极淡的灰白色，比纯白更有质感 */
     --card-bg: #ffffff;
-    --border: rgba(0, 0, 0, 0.06);
+    --border: rgba(0, 0, 0, 0.05);
     --text: #050505;
     --text-dim: #71717a;
     --primary: #000000;
@@ -10,18 +10,20 @@
     --radius-lg: 32px;
     --radius-md: 20px;
     --grid-line: rgba(0, 0, 0, 0.03);
+    --accent-line: rgba(59, 130, 246, 0.1);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg: #ffffff;
-        --card-bg: #ffffff;
-        --border: rgba(0, 0, 0, 0.06);
-        --text: #050505;
-        --text-dim: #71717a;
-        --primary: #000000;
-        --accent: #3b82f6;
-        --grid-line: rgba(0, 0, 0, 0.03);
+        --bg: #0a0a0a;
+        --card-bg: #121212;
+        --border: rgba(255, 255, 255, 0.06);
+        --text: #f8f9fa;
+        --text-dim: #a1a1aa;
+        --primary: #ffffff;
+        --accent: #60a5fa;
+        --grid-line: rgba(255, 255, 255, 0.02);
+        --accent-line: rgba(96, 165, 250, 0.05);
     }
 }
 
@@ -34,37 +36,60 @@
 
 html {
     scroll-behavior: smooth;
-    background-color: #ffffff;
+    background-color: var(--bg);
 }
 
 body {
     font-family: var(--font-main);
     color: var(--text);
-    background-color: #ffffff;
+    background-color: var(--bg);
     overflow-x: hidden;
     line-height: 1.5;
 }
 
-/* Design Line Decorations */
+/* 现代设计感背景装饰 */
 .grid-overlay {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
     z-index: -2;
+    /* 组合网格：主网格 + 细点网格 */
     background-image: 
         linear-gradient(var(--grid-line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-    background-size: 80px 80px;
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
+        radial-gradient(var(--grid-line) 1px, transparent 1px);
+    background-size: 100px 100px, 100px 100px, 20px 20px;
     pointer-events: none;
-    background-color: #ffffff;
+}
+
+/* 装饰性装饰线条 */
+.grid-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 140px; /* 对齐侧边栏边缘 */
+    width: 1px; height: 100%;
+    background: linear-gradient(to bottom, transparent, var(--accent-line), transparent);
+}
+
+.grid-overlay::after {
+    content: '';
+    position: absolute;
+    top: 20%; left: 0;
+    width: 100%; height: 1px;
+    background: linear-gradient(to right, transparent, var(--accent-line), transparent);
 }
 
 .noise-overlay {
-    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    opacity: 0.015; /* 极低透明度增加纸质质感 */
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
 /* Typography Enhancements */
 .gradient-text {
-    background: linear-gradient(to right, var(--text), var(--text-dim));
+    background: linear-gradient(to right, var(--text) 30%, var(--text-dim));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -72,6 +97,7 @@ body {
 .text-outline {
     -webkit-text-stroke: 1px var(--text-dim);
     color: transparent;
+    opacity: 0.4;
 }
 
 /* Layout Structure */
@@ -150,16 +176,16 @@ body {
     border-radius: 12px;
     border: 1px solid var(--border);
     background: var(--card-bg);
-    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
     transition: 0.3s cubic-bezier(0.2, 0, 0, 1);
     width: fit-content;
 }
 
 .social-icon-btn:hover {
     color: var(--text);
-    background: var(--border);
-    transform: translateX(4px);
-    border-color: var(--text-dim);
+    background: var(--bg);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 
 .main-content {
@@ -191,8 +217,9 @@ body {
 
 .hero-badge {
     display: inline-block;
-    padding: 6px 12px;
-    background: var(--border);
+    padding: 6px 14px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
     border-radius: 99px;
     font-size: 0.75rem;
     font-weight: 700;
@@ -200,6 +227,7 @@ body {
     letter-spacing: 0.05em;
     margin-bottom: 24px;
     width: fit-content;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
 }
 
 .hero-title {
@@ -234,12 +262,13 @@ body {
 
 .primary-btn:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 30px -10px var(--primary);
+    box-shadow: 0 10px 30px -10px var(--accent);
 }
 
 .secondary-btn {
     padding: 16px 32px;
     border: 1px solid var(--border);
+    background: var(--card-bg);
     color: var(--text);
     border-radius: 12px;
     font-weight: 700;
@@ -248,7 +277,7 @@ body {
 }
 
 .secondary-btn:hover {
-    background: var(--border);
+    background: var(--bg);
 }
 
 /* Bento Grid */
@@ -256,20 +285,23 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 200px;
-    gap: 20px;
+    gap: 24px;
 }
 
 .bento-item {
     border-radius: var(--radius-md);
     border: 1px solid var(--border);
+    background: var(--card-bg);
     padding: 30px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 10px 30px -15px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
 }
 
-.glass {
-    background: var(--card-bg);
-    backdrop-filter: blur(20px);
+.bento-item:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
 }
 
 .bento-large { grid-column: span 2; grid-row: span 2; }
@@ -287,7 +319,8 @@ body {
 
 .chip {
     padding: 4px 12px;
-    background: var(--border);
+    background: var(--bg);
+    border: 1px solid var(--border);
     border-radius: 99px;
     font-size: 0.8rem;
     font-weight: 600;
@@ -297,7 +330,7 @@ body {
     position: absolute;
     right: -20px; bottom: -20px;
     width: 150px; height: 150px;
-    opacity: 0.05;
+    opacity: 0.03;
     transform: rotate(-15deg);
 }
 
@@ -315,13 +348,16 @@ body {
     padding: 40px;
     border-radius: var(--radius-md);
     border: 1px solid var(--border);
+    background: var(--card-bg);
+    box-shadow: 0 10px 40px -20px rgba(0,0,0,0.05);
     transition: 0.4s cubic-bezier(0.2, 0, 0, 1);
     position: relative;
 }
 
 .work-card:hover {
-    background: var(--border);
-    transform: scale(1.01);
+    border-color: var(--accent);
+    transform: scale(1.01) translateY(-4px);
+    box-shadow: 0 20px 60px -20px rgba(0,0,0,0.1);
 }
 
 .work-meta {
@@ -365,8 +401,9 @@ body {
 }
 
 .work-card:hover .work-arrow {
-    background: var(--text);
+    background: var(--primary);
     color: var(--bg);
+    border-color: var(--primary);
     transform: rotate(45deg);
 }
 
@@ -379,13 +416,15 @@ body {
 .about-bento {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 24px;
 }
 
 .about-card {
     padding: 40px;
     border-radius: var(--radius-md);
     border: 1px solid var(--border);
+    background: var(--card-bg);
+    box-shadow: 0 10px 30px -15px rgba(0,0,0,0.05);
 }
 
 .about-heading { font-size: 1.5rem; margin-bottom: 24px; font-weight: 800; }

@@ -3,221 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>马俊杰 (saudademjj) - 全栈开发工程师</title>
-    <meta name="description" content="马俊杰的个人主页与技术作品集。全栈开发工程师，热爱前后端技术与现代视觉交互设计。">
+    <title>马俊杰 | Full Stack Engineer & Designer</title>
+    <meta name="description" content="马俊杰 (saudademjj) 的个人主页。深耕全栈开发，追求卓越的交互体验与系统架构。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="portfolio.css">
 </head>
 <body>
-    <!-- 动态背景光效 -->
-    <div class="bg-blobs">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-    </div>
+    <!-- 极光网格背景 -->
+    <div class="mesh-gradient"></div>
+    <div class="noise-overlay"></div>
 
-    <div class="container">
-        <!-- 头部信息 -->
-        <header class="header glass-panel animate-in delay-1">
-            <div class="header-content">
-                <div class="header-text">
-                    <h1 class="name gradient-text">马俊杰</h1>
-                    <h2 class="title">全栈开发工程师 <span class="divider">/</span> 极客 <span class="divider">/</span> 视觉交互爱好者</h2>
-                    <p class="bio">致力于构建高性能后端架构与极致的前端交互体验，熟练掌握 React、Vue、Go、Python 等现代技术栈，拥有端到端加密、全栈分离重构等复杂业务落地经验。</p>
-                </div>
-                <div class="contact-info">
-                    <a href="mailto:www616066586@126.com" class="contact-btn glass-btn">
-                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                        Email Me
-                    </a>
-                    <a href="https://github.com/saudademjj" target="_blank" class="contact-btn glass-btn">
-                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                        GitHub
-                    </a>
-                </div>
+    <div class="app-container">
+        <!-- 侧边导航 (仅桌面端可见) -->
+        <nav class="side-nav">
+            <div class="logo">MJ</div>
+            <div class="nav-items">
+                <a href="#home" class="nav-item active">Home</a>
+                <a href="#skills" class="nav-item">Skills</a>
+                <a href="#projects" class="nav-item">Works</a>
+                <a href="#about" class="nav-item">About</a>
             </div>
-        </header>
+            <div class="social-links">
+                <a href="https://github.com/saudademjj" target="_blank">GH</a>
+            </div>
+        </nav>
 
-        <main>
-            <!-- 技能栈模块 -->
-            <section class="section animate-in delay-2">
-                <div class="section-header">
-                    <div class="icon-box">
-                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                    </div>
-                    <h3 class="section-title">技术栈矩阵</h3>
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section id="home" class="hero-section reveal">
+                <div class="hero-badge">Available for Internship 2025/2026</div>
+                <h1 class="hero-title">
+                    Crafting <span class="text-outline">Digital</span><br>
+                    <span class="gradient-text">Experiences.</span>
+                </h1>
+                <p class="hero-sub">
+                    我是<strong>马俊杰</strong>，一名专注全栈工程与系统设计的开发者。在上海海洋大学攻读大数据技术的同时，我致力于构建安全、高效且具有设计美感的数字产品。
+                </p>
+                <div class="hero-actions">
+                    <a href="mailto:www616066586@126.com" class="primary-btn">Connect With Me</a>
+                    <a href="#projects" class="secondary-btn">View My Works</a>
                 </div>
-                <div class="skills-grid">
-                    <div class="skill-card glass-panel">
-                        <div class="skill-icon frontend-icon">
-                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            </section>
+
+            <!-- Bento Skills Section -->
+            <section id="skills" class="section">
+                <h2 class="section-heading reveal">Technical Arsenal</h2>
+                <div class="bento-grid">
+                    <div class="bento-item bento-large glass reveal delay-1">
+                        <div class="bento-content">
+                            <h3>Full-Stack Mastery</h3>
+                            <p>从微服务架构到现代响应式前端，我构建端到端的完整闭环。</p>
+                            <div class="tech-cloud">
+                                <span class="chip">Next.js</span><span class="chip">Go</span>
+                                <span class="chip">FastAPI</span><span class="chip">Spring Boot</span>
+                                <span class="chip">React</span><span class="chip">Vue 3</span>
+                                <span class="chip">Hono</span><span class="chip">PostgreSQL</span>
+                            </div>
                         </div>
-                        <h4>前端架构与视觉</h4>
-                        <div class="tags">
-                            <span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Vue 3</span>
-                            <span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span>
-                            <span class="tag">Zustand</span><span class="tag">Pinia</span><span class="tag">Framer Motion</span>
-                        </div>
-                    </div>
-                    <div class="skill-card glass-panel">
-                        <div class="skill-icon backend-icon">
-                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
-                        </div>
-                        <h4>后端微服务与API</h4>
-                        <div class="tags">
-                            <span class="tag">Go</span><span class="tag">Python</span><span class="tag">Java</span><span class="tag">Node.js</span>
-                            <span class="tag">FastAPI</span><span class="tag">Spring Boot</span><span class="tag">Hono</span><span class="tag">Flask</span>
-                        </div>
-                    </div>
-                    <div class="skill-card glass-panel">
-                        <div class="skill-icon data-icon">
-                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
-                        </div>
-                        <h4>数据持久化与安全</h4>
-                        <div class="tags">
-                            <span class="tag">PostgreSQL</span><span class="tag">MySQL</span>
-                            <span class="tag">Drizzle ORM</span><span class="tag">SQLAlchemy</span>
-                            <span class="tag">Web Crypto API (E2EE)</span><span class="tag">JWT</span>
+                        <div class="bento-bg-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                         </div>
                     </div>
-                    <div class="skill-card glass-panel">
-                        <div class="skill-icon ai-icon">
-                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    <div class="bento-item bento-small glass reveal delay-2">
+                        <div class="bento-content">
+                            <h3>Security First</h3>
+                            <p>实践 E2EE 端到端加密通信与细粒度 RBAC 权限体系。</p>
                         </div>
-                        <h4>AI与计算机视觉</h4>
-                        <div class="tags">
-                            <span class="tag">PyTorch</span><span class="tag">OpenCV</span>
-                            <span class="tag">ResNet50</span><span class="tag">迁移学习</span><span class="tag">姿态检测</span>
+                    </div>
+                    <div class="bento-item bento-small glass reveal delay-3">
+                        <div class="bento-content">
+                            <h3>AI & Vision</h3>
+                            <p>ResNet50 迁移学习与 OpenCV 实时姿态分析实践。</p>
+                        </div>
+                    </div>
+                    <div class="bento-item bento-medium glass reveal delay-4">
+                        <div class="bento-content">
+                            <h3>Engineering Culture</h3>
+                            <p>Docker 容器化、纯英技术文档阅读能力、硬核 CS 理论基础。</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 核心项目模块 -->
-            <section class="section animate-in delay-3">
-                <div class="section-header">
-                    <div class="icon-box">
-                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-                    </div>
-                    <h3 class="section-title">核心工程实践</h3>
+            <!-- Featured Projects -->
+            <section id="projects" class="section">
+                <div class="section-header-flex">
+                    <h2 class="section-heading reveal">Selected Works</h2>
+                    <span class="count-badge reveal">5+ Projects</span>
                 </div>
-                
-                <div class="project-list">
-                    <!-- 项目 1 -->
-                    <div class="project-card glass-panel">
-                        <div class="project-content">
-                            <div class="project-header">
-                                <h4 class="gradient-text-alt">图书馆座位预约系统</h4>
-                                <span class="badge new-badge">Next.js App Router</span>
+
+                <div class="project-grid">
+                    <!-- Project 1 -->
+                    <div class="work-card glass reveal">
+                        <div class="work-info">
+                            <div class="work-meta">2024 · Web Application</div>
+                            <h3 class="work-title">Library Reservation System</h3>
+                            <p class="work-description">基于 Next.js 14 与 Hono 的全栈预约方案，解决高并发座位冲突与状态同步问题。</p>
+                            <div class="work-tags">
+                                <span>TypeScript</span><span>Drizzle</span><span>shadcn/ui</span>
                             </div>
-                            <p class="project-desc">基于现代前后端分离架构的图书馆座位预约系统，采用高颜值的 UI 组件与类型安全的 ORM 构建。</p>
-                            <div class="project-tech">
-                                <span>Next.js</span><span class="dot"></span><span>Hono</span><span class="dot"></span><span>PostgreSQL</span><span class="dot"></span><span>Drizzle ORM</span><span class="dot"></span><span>Tailwind CSS</span>
-                            </div>
-                            <ul class="list">
-                                <li>基于 <strong>Server Components</strong> 和 <strong>Hono</strong> 构建高性能前后端 API，极大优化首屏渲染与数据获取速度。</li>
-                                <li>使用 Drizzle ORM 进行类型安全的数据库交互，处理复杂的座位状态机与高并发下的预约冲突检测逻辑。</li>
-                                <li>结合 Tailwind CSS 和 shadcn/ui 实现了响应式、高交互性且具有现代毛玻璃质感的用户界面。</li>
-                            </ul>
+                        </div>
+                        <div class="work-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                         </div>
                     </div>
 
-                    <!-- 项目 2 -->
-                    <div class="project-card glass-panel">
-                        <div class="project-content">
-                            <div class="project-header">
-                                <h4 class="gradient-text-alt">端到端加密聊天室 (E2EE Chat)</h4>
-                                <span class="badge secure-badge">Web Crypto API</span>
+                    <!-- Project 2 -->
+                    <div class="work-card glass reveal">
+                        <div class="work-info">
+                            <div class="work-meta">2024 · Privacy & Security</div>
+                            <h3 class="work-title">E2EE Chat Space</h3>
+                            <p class="work-description">使用 Web Crypto API 与 Go WebSocket 构建的端到端加密通信系统，保障绝对的通讯隐私。</p>
+                            <div class="work-tags">
+                                <span>Go</span><span>WebSocket</span><span>Cryptography</span>
                             </div>
-                            <p class="project-desc">注重隐私安全的前后端分离实时通讯应用，服务端仅作为数据中继，无法获取任何明文消息内容。</p>
-                            <div class="project-tech">
-                                <span>Go</span><span class="dot"></span><span>React</span><span class="dot"></span><span>WebSocket</span><span class="dot"></span><span>PostgreSQL</span>
-                            </div>
-                            <ul class="list">
-                                <li>使用 <strong>Go 语言原生 WebSocket</strong> 实现了高并发、低延迟的消息中继服务，保障消息实时送达。</li>
-                                <li>在 React 前端利用 Web Crypto API 生成并交换公私钥，实现消息在浏览器端的<strong>端到端加密（E2EE）</strong>，数据库仅存储加密后的 Payload。</li>
-                                <li>设计并实现了优雅的即时通讯 UI 及断线重连机制，保障弱网环境下的用户体验。</li>
-                            </ul>
+                        </div>
+                        <div class="work-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                         </div>
                     </div>
 
-                    <!-- 项目 3 -->
-                    <div class="project-card glass-panel">
-                        <div class="project-content">
-                            <div class="project-header">
-                                <h4 class="gradient-text-alt">LoveJournal 恋爱日记 Web 应用</h4>
-                                <span class="badge refactor-badge">SPA 重构</span>
+                    <!-- Project 3 -->
+                    <div class="work-card glass reveal">
+                        <div class="work-info">
+                            <div class="work-meta">2024 · Interaction Design</div>
+                            <h3 class="work-title">Beijing Diary Visuals</h3>
+                            <p class="work-description">沉浸式叙事交互设计，运用 Framer Motion 与高级滚动动效打造的城市游记。</p>
+                            <div class="work-tags">
+                                <span>Motion Design</span><span>Visual Storytelling</span>
                             </div>
-                            <p class="project-desc">将原本基于 Flask 的单体应用全面重构为现代前后端分离架构，支持日记管理、照片流与多维时间轴。</p>
-                            <div class="project-tech">
-                                <span>FastAPI</span><span class="dot"></span><span>React</span><span class="dot"></span><span>Zustand</span><span class="dot"></span><span>Framer Motion</span>
-                            </div>
-                            <ul class="list">
-                                <li>后端使用 <strong>FastAPI</strong> 提供高性能的异步接口，配合 SQLAlchemy 完成数据库交互，并引入 JWT 机制保障接口安全。</li>
-                                <li>前端使用 React + Zustand 进行状态管理，支持 Markdown 渲染及基于 <strong>Framer Motion</strong> 的流畅页面过渡动画。</li>
-                                <li>优化了图片上传、编辑链路以及前端检索分页加载功能，大幅提升了富媒体内容的展示与加载效率。</li>
-                            </ul>
+                        </div>
+                        <a href="beijing.html" class="work-link-overlay"></a>
+                        <div class="work-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 教育与亮点双栏 -->
-            <div class="two-columns animate-in delay-4">
-                <section class="section">
-                    <div class="section-header">
-                        <div class="icon-box">
-                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
-                        </div>
-                        <h3 class="section-title">教育背景</h3>
-                    </div>
-                    <div class="glass-panel info-card">
-                        <div class="info-header">
-                            <h4>上海海洋大学</h4>
-                            <span class="date-badge">2023 - 2027</span>
-                        </div>
-                        <p class="major gradient-text-alt">数据科学与大数据技术 · 本科</p>
-                        <ul class="list compact">
-                            <li><strong>主修课程：</strong>计算机组成原理（Logisim硬件实验）、计算机网络（PacketTracer拓扑）、数据结构与算法等。</li>
-                            <li><strong>硬核自学：</strong>完成 UC Berkeley CS61A (Hog项目)、习惯纯英文技术文档阅读与独立排查攻坚。</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <section class="section">
-                    <div class="section-header">
-                        <div class="icon-box">
-                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
-                        </div>
-                        <h3 class="section-title">个人亮点 & 设计探索</h3>
-                    </div>
-                    <div class="glass-panel info-card explore-card">
-                        <p class="highlight-text">在追求后端系统<strong>高并发与安全性</strong>的同时，也极度关注前端的<strong>交互动效与视觉美感</strong>。</p>
-                        
-                        <a href="beijing.html" class="portfolio-link-card">
-                            <div class="portfolio-link-content">
-                                <h5>《京城十日志》沉浸式视觉交互页</h5>
-                                <p>纯前端无依赖打造的滚动交互叙事网页，展现对极简设计与动画节奏的把控力。</p>
+            <!-- About / Education -->
+            <section id="about" class="section reveal">
+                <div class="about-bento">
+                    <div class="about-card glass">
+                        <h3 class="about-heading">Education</h3>
+                        <div class="edu-item">
+                            <div class="edu-main">
+                                <strong>上海海洋大学 (SHOU)</strong>
+                                <span>2023 - 2027</span>
                             </div>
-                            <div class="portfolio-link-icon">
-                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                            </div>
-                        </a>
-
-                        <div class="ai-practice">
-                            <h5>🤖 AI 实践成果</h5>
-                            <p>基于 <strong>PyTorch & ResNet50</strong> 完成鱼类识别模型迁移学习；结合 OpenCV 研发 <strong>FitnessPoseAnalyzer</strong> 人体姿态反馈系统。</p>
+                            <p>数据科学与大数据技术 · 本科在读</p>
                         </div>
                     </div>
-                </section>
-            </div>
+                    <div class="about-card glass">
+                        <h3 class="about-heading">Philosophy</h3>
+                        <p class="quote">“在追求后端系统高并发与安全性的同时，也极度关注前端的交互动效与视觉美感。”</p>
+                        <div class="brand-signature">馬俊杰 · Ma Junjie</div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="main-footer reveal">
+                <div class="footer-line"></div>
+                <div class="footer-content">
+                    <p>© 2024 MJ. Designed for the future.</p>
+                    <div class="footer-links">
+                        <a href="https://github.com/saudademjj">GitHub</a>
+                        <a href="mailto:www616066586@126.com">Contact</a>
+                    </div>
+                </div>
+            </footer>
         </main>
-
-        <footer class="footer glass-panel animate-in delay-5">
-            <p>© 2024 马俊杰 (saudademjj). Crafted with modern web technologies.</p>
-        </footer>
     </div>
+
+    <script>
+        // 滚动揭露动画
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>

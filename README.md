@@ -1,10 +1,8 @@
+<a id="readme-top"></a>
+
 # saudademjj.github.io
 
-**Language:** [Chinese](#chinese-version) | [English](#english-version)
-
-## Chinese Version
-
-**Language:** Chinese | [English](#english-version)
+<p align="right">中文 | <a href="#english-version">English</a></p>
 
 这是我的 GitHub Pages 站点源码仓库，当前主页定位是个人作品集与开发者介绍页，包含首页、技能、项目和关于我等板块。仓库内同时保留了静态展示页相关资源，适合继续扩展为个人主页、作品集或专题落地页。
 
@@ -75,7 +73,7 @@ saudademjj.github.io/
 
 ## English Version
 
-**Language:** [Chinese](#chinese-version) | English
+<p align="right"><a href="#readme-top">中文</a> | English</p>
 
 This repository contains the source for my GitHub Pages site. The current homepage is positioned as a personal portfolio and developer profile, with sections for the hero area, skills, projects, and an about section. The repo also keeps static showcase assets that can be extended into landing pages, portfolio experiments, or themed microsites.
 

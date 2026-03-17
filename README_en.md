@@ -1,62 +1,59 @@
-English | [简体中文](README.md)
+<div align="center">
+  English | <a href="./README.md">简体中文</a>
+</div>
 
-# saudademjj.github.io
+# saudademjj.github.io (Personal Technical Portal & Narrative Storytelling Portfolio)
 
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript)
+![GSAP](https://img.shields.io/badge/GSAP-3.12-88CE02?style=flat-square&logo=greensock)
+![Vercel](https://img.shields.io/badge/Vercel-Hosted-000000?style=flat-square&logo=vercel)
 
-This repository contains the source for my GitHub Pages site. The current homepage is positioned as a personal portfolio and developer profile, with sections for the hero area, skills, projects, and an about section. The repo also keeps static showcase assets that can be extended into landing pages, portfolio experiments, or themed microsites.
+This project is the personal digital gateway of saudademjj, serving as a comprehensive portfolio space to demonstrate full-stack engineering practices, system design philosophies, and interactive aesthetics. Built on a native Web technology stack and orchestrated via the industry-standard GSAP animation engine, the project achieves highly immersive narrative interactions while ensuring peak loading performance.
 
-## Current Content
+## Core Interaction Design
 
-- Personal homepage hero and introduction
-- Skills section
-- Project showcase section
-- About section and external links
-- Extra static showcase assets such as `beijing.html`
+### 1. Modern Modular Layout (Bento Grid)
+- **Information Hierarchy Optimization**: Drawing from modern Bento design languages, it utilizes an asymmetric grid system to efficiently communicate the Technical Arsenal and Selected Works.
+- **Responsive Breakpoint Control**: Fine-tuned CSS Grid container properties ensure visual impact remains consistent across the entire device spectrum, from ultra-wide monitors to mobile screens.
 
-## Tech Stack
+### 2. Scroll-Driven Animation Engine
+- **Pixel-Level Scheduling**: Deeply employs GSAP and the ScrollTrigger plugin to use the page scroll position as a timeline variable, enabling deep synchronization of element entry, displacement, and parallax.
+- **Custom Cursor Interaction**: Implements a smooth cursor-following effect with physical inertia in the browser, enhancing tactile feedback during exploration.
 
-- `HTML5`
-- `CSS3`
-- `Vanilla JavaScript`
-- GitHub Pages for static hosting
+### 3. Interactive Storytelling (Ten Days in Beijing)
+- **Specialized Experimental Module**: A narrative experiment located at `beijing.html`, exploring how technology can empower the expression of long-axis content.
+- **Multi-Layer Parallax Rendering**: Features multi-layer image blending and dynamic text appearance triggered by horizontal scrolling, transforming a traditional travelogue into a cinematic visual feast.
 
-## Run Locally
+## Technical Stack & Selections
 
-```bash
-git clone https://github.com/saudademjj/saudademjj.github.io.git
-cd saudademjj.github.io
-python3 -m http.server 8080
-```
+- **Core Architecture**: Native HTML5 / CSS3 / ES6+ JavaScript. Adheres to a zero-framework dependency strategy to prioritize maximum rendering priority and minimal runtime overhead.
+- **Animation Driver**: GSAP 3.12+ (including ScrollTrigger, ScrollToPlugin, and TextPlugin).
+- **Typography**: Integration of Google Fonts' Plus Jakarta Sans (Latin) and Noto Sans SC (Chinese).
+- **Hosting Platform**: Vercel. Utilizes edge distribution networks to accelerate the global loading of static assets.
 
-Open `http://localhost:8080`
-
-## Repository Structure
+## Project Structure
 
 ```text
-saudademjj.github.io/
-├── index.html
-├── beijing.html
-├── portfolio.css
-├── styles.css
-├── script.js
-├── CNAME
-├── README.md
-└── README.en.md
+.
+├── index.html              # Core homepage entry (Bento implementation)
+├── beijing.html            # Narrative interaction experimental module
+├── styles.css              # Global typography, color variables, and layout specs
+├── portfolio.css           # Portfolio-specific business component styles
+├── script.js               # GSAP-driven interaction core logic
+├── assets/                 # WebP and SVG optimized visual resources
+└── CNAME                   # Custom domain configuration file
 ```
 
-## Good Next Steps
+## Local Development
 
-- Expand the portfolio with richer project case studies
-- Unify the visual system and navigation patterns
-- Add screenshots, a resume download, and better contact links
-- Publish additional themed pages through GitHub Pages
+Since the project is based on a native architecture, no complex build process is required. A static HTTP server is sufficient to launch:
 
-## Deployment
-
-1. Push the source to the `main` branch
-2. In `Settings -> Pages`, select `main / root`
-3. Wait for GitHub Pages to finish building and publish the site
+```bash
+# Recommended method
+npx serve .
+```
 
 ## License
-
-This project is licensed under the MIT License. See [LICENSE](./LICENSE).
+This project is licensed under the MIT License.

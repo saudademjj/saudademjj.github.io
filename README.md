@@ -1,61 +1,109 @@
 <div align="center">
-  <a href="./README_en.md">English</a> | 简体中文
+  <p>Immersive Static Showcase Page / 沉浸式静态展示页</p>
+  <p>
+    <a href="#english">English</a> •
+    <a href="#简体中文">简体中文</a>
+  </p>
 </div>
 
-# saudademjj.github.io (个人数字门户与交互叙事作品集)
+---
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript)
-![GSAP](https://img.shields.io/badge/GSAP-3.12-88CE02?style=flat-square&logo=greensock)
-![Vercel](https://img.shields.io/badge/Vercel-Hosted-000000?style=flat-square&logo=vercel)
+<h2 id="english">🇬🇧 English</h2>
 
-本项目是 saudademjj 的个人数字门户，承载了全栈工程实践、系统设计理念与交互美学的综合展示。系统拒绝使用重型前端框架，转而采用原生 Web 技术栈配合工业级动画引擎 GSAP，旨在探索 Web 性能优化与沉浸式叙事交互的极致平衡。
+# saudademjj.github.io
 
-## 🎨 核心交互设计规范
+This repository hosts the source code for my GitHub Pages site. The current iteration features an immersive, visually-driven static web page themed around a **"10-Day Beijing Journal"**. It is designed with a strong emphasis on visual storytelling and fluid scrolling interactions.
 
-### 1. 现代化响应式布局 (Bento Grid)
-- **非对称网格系统**: 借鉴现代 Bento 设计语言，利用 CSS Grid 构建具备信息密度的模块化布局。通过 `grid-template-areas` 精确定义技术栈矩阵与核心项目的空间权重。
-- **全设备适配策略**: 针对从 4K 桌面显示器到小型移动端设备的 5 级断点调优，确保视觉张力在任何尺寸下都不打折扣。
+### ✨ Highlights & Features
 
-### 2. 滚动驱动动效引擎 (Scroll-driven Engine)
-- **像素级调度**: 深度集成 GSAP 3.12 及其 **ScrollTrigger** 插件。将页面的滚动位置直接映射为动画的时间轴（Timeline）进度，实现了元素入场、视差位移与动态缩放的无缝关联。
-- **性能优化实践**: 通过 `will-change` 属性与 GPU 加速层优化，确保在大规模视差滚动下仍能保持 60fps 的极致流畅度。
+- **Zero Dependencies**: A pure frontend static page with no backend required.
+- **Cinematic Experience**: Features full-screen loading transitions and elegant text reveals.
+- **Interactive Scrolling**: Equipped with a reading progress bar and scroll-triggered block fade-ins.
+- **Card-based Layout**: Organizes the 10-day itinerary into a clean, responsive card grid.
+- **Dynamic Elements**: Includes animated data counters and custom mouse hover feedback for a polished feel.
 
-### 3. 京城十日志 (Interactive Storytelling)
-- **长轴实验模块**: 位于 `beijing.html` 的叙事专项。利用横向滚动触发的多图层视差流，重构了旅行游记的视觉呈现维度。
-- **排版美学**: 深度适配 Google Fonts 托管的 Noto Serif SC，通过衬线体的厚重感与留白交互营造具备电影质感的叙事氛围。
+### 🛠 Technology Stack
 
-## 🛠️ 技术选型与性能指标
+- **HTML5** (Semantic structuring)
+- **CSS3** (Custom properties and responsive flex/grid layouts)
+- **Vanilla JavaScript** (DOM manipulation and event handling)
+- **GSAP** (GreenSock Animation Platform via CDN for high-performance animations)
 
-| 维度 | 技术方案 | 核心优势 |
-| :--- | :--- | :--- |
-| **基础引擎** | 原生 ES6+ JavaScript | 零框架运行时开销，最快可交互时间 (TTI)。 |
-| **动效调度** | GSAP / ScrollTrigger | 像素级控制力，支持复杂的补间动画逻辑。 |
-| **资产优化** | WebP / SVG | 极小的静态资源载荷，支持无损高清展示。 |
-| **托管分发** | Vercel Edge | 全球边缘加速，毫秒级首屏加载。 |
+### 🚀 Local Preview
 
-## 📂 项目结构解析
-
-```text
-.
-├── index.html              # 门户主入口 (Bento Grid 架构实现)
-├── beijing.html            # 沉浸式叙事专题：京城十日志
-├── script.js               # 核心动效引擎与交互生命周期管理
-├── styles.css              # 全局排版、网格标准与 CSS 变量系统
-├── portfolio.css           # 针对作品集模块的专用业务样式
-├── assets/                 # 视觉资源库 (包含 SVG 路径动画资产)
-└── CNAME                   # 个人域名解析配置
-```
-
-## 🚀 开发者预览方式
-
-由于项目采用零构建架构，您无需执行 `npm build`，仅需任何静态服务器即可：
+You can easily preview the site locally using Python's built-in HTTP server:
 
 ```bash
-# 推荐使用 npx serve
-npx serve .
+git clone https://github.com/saudademjj/saudademjj.github.io.git
+cd saudademjj.github.io
+python3 -m http.server 8080
+```
+Then, visit `http://localhost:8080` in your browser.
+
+### 📂 File Structure
+
+```text
+saudademjj.github.io/
+├── index.html       # The main markup and content structure
+├── styles.css       # Global styles, variables, and responsive media queries
+├── script.js        # Logic for GSAP animations, counters, and scroll events
+└── README.md        # This documentation file
 ```
 
-## 许可证
-本项目采用 MIT License 协议。
+### ⚙️ Customization Guide
+
+This project is highly suitable as a template for a personal homepage, portfolio, or themed event page. You can easily customize it:
+- **Content**: Edit `index.html` to change the copy and layout.
+- **Theme Colors**: Modify the `:root` variables in `styles.css`.
+- **Animations**: Tweak the GSAP timing and easing configurations within `script.js`.
+
+---
+
+<h2 id="简体中文">🇨🇳 简体中文</h2>
+
+# saudademjj.github.io
+
+本仓库为 GitHub Pages 站点的源码库。当前版本展示了一个以「京城十日志」为主题的沉浸式静态网页，设计上极力强调视觉叙事与流畅的滚动交互体验。
+
+### ✨ 功能亮点
+
+- **纯静态无依赖**：纯前端页面，无需配置任何后端服务。
+- **电影级观感**：包含首屏加载过渡与优雅的文本动效。
+- **互动式滚动**：内置页面滚动进度条以及随着滚动渐入的内容区块。
+- **卡片式排版**：通过响应式卡片流清晰地编排 10 天的行程。
+- **动态微交互**：实现了数据计数器动效以及自定义的鼠标悬浮视觉反馈。
+
+### 🛠 技术栈
+
+- **HTML5**（语义化结构）
+- **CSS3**（原生变量与响应式 Flex/Grid 布局）
+- **原生 JavaScript**（DOM 操作与事件监听）
+- **GSAP**（通过 CDN 引入的工业级动画库，保障丝滑体验）
+
+### 🚀 本地预览
+
+无需复杂的构建工具，使用 Python 自带的 HTTP 服务器即可快速预览：
+
+```bash
+git clone https://github.com/saudademjj/saudademjj.github.io.git
+cd saudademjj.github.io
+python3 -m http.server 8080
+```
+随后在浏览器中访问：`http://localhost:8080`。
+
+### 📂 文件结构
+
+```text
+saudademjj.github.io/
+├── index.html       # 核心结构与文本内容
+├── styles.css       # 全局样式、主题变量与响应式规则
+├── script.js        # GSAP 动画触发器、计数器及滚动逻辑
+└── README.md        # 项目说明文档
+```
+
+### ⚙️ 定制与复用
+
+该页面非常适合作为个人主页、作品集或专题活动页的模板。你可以通过以下方式快速定制：
+- **文案与结构**：直接修改 `index.html`。
+- **主题配色**：调整 `styles.css` 顶部的 `:root` 变量。
+- **动画参数**：在 `script.js` 中微调 GSAP 的时间轴与缓动函数。

@@ -1,6 +1,10 @@
 # saudademjj.github.io
 
-[English README](./README.en.md)
+**Language:** [Chinese](#chinese-version) | [English](#english-version)
+
+## Chinese Version
+
+**Language:** Chinese | [English](#english-version)
 
 这是我的 GitHub Pages 站点源码仓库，当前主页定位是个人作品集与开发者介绍页，包含首页、技能、项目和关于我等板块。仓库内同时保留了静态展示页相关资源，适合继续扩展为个人主页、作品集或专题落地页。
 
@@ -66,3 +70,67 @@ saudademjj.github.io/
 ## 许可证
 
 本仓库采用 MIT License，详见 [LICENSE](./LICENSE)。
+
+---
+
+## English Version
+
+**Language:** [Chinese](#chinese-version) | English
+
+This repository contains the source for my GitHub Pages site. The current homepage is positioned as a personal portfolio and developer profile, with sections for the hero area, skills, projects, and an about section. The repo also keeps static showcase assets that can be extended into landing pages, portfolio experiments, or themed microsites.
+
+## Current Content
+
+- Personal homepage hero and introduction
+- Skills section
+- Project showcase section
+- About section and external links
+- Extra static showcase assets such as `beijing.html`
+
+## Tech Stack
+
+- `HTML5`
+- `CSS3`
+- `Vanilla JavaScript`
+- GitHub Pages for static hosting
+
+## Run Locally
+
+```bash
+git clone https://github.com/saudademjj/saudademjj.github.io.git
+cd saudademjj.github.io
+python3 -m http.server 8080
+```
+
+Open `http://localhost:8080`
+
+## Repository Structure
+
+```text
+saudademjj.github.io/
+├── index.html
+├── beijing.html
+├── portfolio.css
+├── styles.css
+├── script.js
+├── CNAME
+├── README.md
+└── README.en.md
+```
+
+## Good Next Steps
+
+- Expand the portfolio with richer project case studies
+- Unify the visual system and navigation patterns
+- Add screenshots, a resume download, and better contact links
+- Publish additional themed pages through GitHub Pages
+
+## Deployment
+
+1. Push the source to the `main` branch
+2. In `Settings -> Pages`, select `main / root`
+3. Wait for GitHub Pages to finish building and publish the site
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](./LICENSE).

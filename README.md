@@ -1,6 +1,6 @@
 # saudademjj.github.io
 
-<p align="right">中文 | <a href="https://github.com/saudademjj/saudademjj.github.io/tree/en/readme">English</a></p>
+[English](README_en.md) | 简体中文
 
 这是我的 GitHub Pages 站点源码仓库，当前主页定位是个人作品集与开发者介绍页，包含首页、技能、项目和关于我等板块。仓库内同时保留了静态展示页相关资源，适合继续扩展为个人主页、作品集或专题落地页。
 

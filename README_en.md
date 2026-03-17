@@ -1,6 +1,6 @@
 # saudademjj.github.io
 
-[中文说明](./README.md)
+English | [简体中文](README.md)
 
 This repository contains the source for my GitHub Pages site. The current homepage is positioned as a personal portfolio and developer profile, with sections for the hero area, skills, projects, and an about section. The repo also keeps static showcase assets that can be extended into landing pages, portfolio experiments, or themed microsites.
 

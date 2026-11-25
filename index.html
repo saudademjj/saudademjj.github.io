@@ -1,247 +1,456 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>saudademjj | Full Stack Engineer & Designer</title>
-    <meta name="description" content="saudademjj 的个人主页。深耕全栈开发，追求卓越的交互体验与系统架构。">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="portfolio.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>saudademjj · Independent Open-Source Products</title>
+  <meta name="description" content="Independent open-source products and developer tooling by saudademjj — desktop apps, AI agent skills, GitHub Actions, and web applications.">
+  <meta property="og:title" content="saudademjj · Independent Open-Source Products">
+  <meta property="og:description" content="Small, self-contained open-source products across Rust, TypeScript, Go, and Python.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://saudade.me/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b0e14'/%3E%3Crect x='6' y='6' width='9' height='9' rx='2' fill='%235b8cff'/%3E%3Crect x='17' y='6' width='9' height='9' rx='2' fill='%23232a3a'/%3E%3Crect x='6' y='17' width='9' height='9' rx='2' fill='%23232a3a'/%3E%3Crect x='17' y='17' width='9' height='9' rx='2' fill='%2334d399'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+SC:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem('saudade-theme');
+        if (savedTheme === 'light' || savedTheme === 'dark') {
+          document.documentElement.setAttribute('data-theme', savedTheme);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+        var savedLang = localStorage.getItem('saudade-lang');
+        if (savedLang === 'en' || savedLang === 'zh') {
+          document.documentElement.setAttribute('data-lang', savedLang);
+          document.documentElement.lang = savedLang === 'en' ? 'en' : 'zh-CN';
+        } else {
+          document.documentElement.setAttribute('data-lang', 'zh');
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
-    <!-- 设计线条背景 -->
-    <div class="grid-overlay"></div>
-    <div class="noise-overlay"></div>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="#top" class="brand" aria-label="saudademjj home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+            <rect x="2" y="2" width="9" height="9" rx="2" fill="var(--accent)"/>
+            <rect x="13" y="2" width="9" height="9" rx="2" fill="var(--panel-strong)"/>
+            <rect x="2" y="13" width="9" height="9" rx="2" fill="var(--panel-strong)"/>
+            <rect x="13" y="13" width="9" height="9" rx="2" fill="var(--ok)"/>
+          </svg>
+        </span>
+        <span class="brand-name">saudademjj</span>
+        <span class="brand-domain">saudade.me</span>
+      </a>
 
-    <div class="app-container">
-        <!-- 侧边导航 (仅桌面端可见) -->
-        <nav class="side-nav">
-            <div class="logo">MJ</div>
-            <div class="nav-items">
-                <a href="#home" class="nav-item">Home</a>
-                <a href="#skills" class="nav-item">Skills</a>
-                <a href="#projects" class="nav-item">Works</a>
-                <a href="#about" class="nav-item">About</a>
-            </div>
-            <div class="social-links">
-                <a href="https://github.com/saudademjj" target="_blank" class="social-icon-btn">
-                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                    <span>GitHub</span>
-                </a>
-            </div>
-        </nav>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="#products" data-zh="产品" data-en="Products">产品</a>
+        <a href="#projects" data-zh="项目" data-en="Projects">项目</a>
+        <a href="#upstream" data-zh="开源贡献" data-en="Upstream">开源贡献</a>
+        <a href="#principles" data-zh="理念" data-en="Principles">理念</a>
+      </nav>
 
-        <main class="main-content">
-            <!-- Hero Section -->
-            <section id="home" class="hero-section reveal">
-                <div class="hero-badge">Available for Internship 2025/2026</div>
-                <h1 class="hero-title">
-                    Crafting <span class="text-outline">Digital</span><br>
-                    <span class="gradient-text">Experiences.</span>
-                </h1>
-                <p class="hero-sub">
-                    我是<strong>saudademjj</strong>，一名专注全栈工程与系统设计的开发者。在University攻读大数据技术的同时，我致力于构建安全、高效且具有设计美感的数字产品。
-                </p>
-                <div class="hero-actions">
-                    <a href="mailto:noreply@example.com" class="primary-btn">Connect With Me</a>
-                    <a href="#projects" class="secondary-btn">View My Works</a>
-                </div>
-            </section>
-
-            <!-- Bento Skills Section -->
-            <section id="skills" class="section">
-                <h2 class="section-heading reveal">Technical Arsenal</h2>
-                <div class="bento-grid">
-                    <div class="bento-item bento-large glass reveal delay-1">
-                        <div class="bento-content">
-                            <h3>Full-Stack Mastery</h3>
-                            <p>从微服务架构到现代响应式前端，我构建端到端的完整闭环。</p>
-                            <div class="tech-cloud">
-                                <span class="chip">Next.js</span><span class="chip">Go</span>
-                                <span class="chip">FastAPI</span><span class="chip">Spring Boot</span>
-                                <span class="chip">React</span><span class="chip">Vue 3</span>
-                                <span class="chip">Hono</span><span class="chip">PostgreSQL</span>
-                            </div>
-                        </div>
-                        <div class="bento-bg-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                        </div>
-                    </div>
-                    <div class="bento-item bento-small glass reveal delay-2">
-                        <div class="bento-content">
-                            <h3>Security First</h3>
-                            <p>实践 E2EE 端到端加密通信与细粒度 RBAC 权限体系。</p>
-                        </div>
-                    </div>
-                    <div class="bento-item bento-small glass reveal delay-3">
-                        <div class="bento-content">
-                            <h3>AI & Vision</h3>
-                            <p>ResNet50 迁移学习与 OpenCV 实时姿态分析实践。</p>
-                        </div>
-                    </div>
-                    <div class="bento-item bento-medium glass reveal delay-4">
-                        <div class="bento-content">
-                            <h3>Engineering Culture</h3>
-                            <p>Docker 容器化、纯英技术文档阅读能力、硬核 CS 理论基础。</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Featured Projects -->
-            <section id="projects" class="section">
-                <div class="section-header-flex">
-                    <h2 class="section-heading reveal">Selected Works</h2>
-                    <span class="count-badge reveal">5+ Projects</span>
-                </div>
-
-                <div class="project-grid">
-                    <!-- Project 1 -->
-                    <div class="work-card glass reveal">
-                        <div class="work-info">
-                            <div class="work-meta">2024 · Web Application</div>
-                            <h3 class="work-title">Library Reservation System</h3>
-                            <p class="work-description">基于 Next.js 14 与 Hono 的全栈预约方案，解决高并发座位冲突与状态同步问题。</p>
-                            <div class="work-tags">
-                                <span>TypeScript</span><span>Drizzle</span><span>shadcn/ui</span>
-                            </div>
-                        </div>
-                        <div class="work-arrow">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                        </div>
-                    </div>
-
-                    <!-- Project 2 -->
-                    <div class="work-card glass reveal">
-                        <div class="work-info">
-                            <div class="work-meta">2024 · Privacy & Security</div>
-                            <h3 class="work-title">E2EE Chat Space</h3>
-                            <p class="work-description">使用 Web Crypto API 与 Go WebSocket 构建的端到端加密通信系统，保障绝对的通讯隐私。</p>
-                            <div class="work-tags">
-                                <span>Go</span><span>WebSocket</span><span>Cryptography</span>
-                            </div>
-                        </div>
-                        <div class="work-arrow">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                        </div>
-                    </div>
-
-                    <!-- Project 3 -->
-                    <div class="work-card glass reveal">
-                        <div class="work-info">
-                            <div class="work-meta">2024 · Interaction Design</div>
-                            <h3 class="work-title">Beijing Diary Visuals</h3>
-                            <p class="work-description">沉浸式叙事交互设计，运用 Framer Motion 与高级滚动动效打造的城市游记。</p>
-                            <div class="work-tags">
-                                <span>Motion Design</span><span>Visual Storytelling</span>
-                            </div>
-                        </div>
-                        <a href="beijing.html" class="work-link-overlay"></a>
-                        <div class="work-arrow">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                        </div>
-                    </div>
-
-                    <!-- Project 4 -->
-                    <div class="work-card glass reveal">
-                        <div class="work-info">
-                            <div class="work-meta">2026 · AI Skill</div>
-                            <h3 class="work-title">luopan(罗盘)</h3>
-                            <p class="work-description">旅游行程规划 skill——16 条排程规则全部来自真人裁判逐轮迭代，来源可追溯，输出前自检，经六城实测验证。</p>
-                            <div class="work-tags">
-                                <span>Skill Design</span><span>Prompt Engineering</span>
-                            </div>
-                        </div>
-                        <a href="/luopan/" class="work-link-overlay"></a>
-                        <div class="work-arrow">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- About / Education -->
-            <section id="about" class="section reveal">
-                <div class="about-bento">
-                    <div class="about-card glass">
-                        <h3 class="about-heading">Education</h3>
-                        <div class="edu-item">
-                            <div class="edu-main">
-                                <strong>Independent</strong>
-                                <span>2023 - 2027</span>
-                            </div>
-                            <p>Independent Open-Source Builder</p>
-                        </div>
-                    </div>
-                    <div class="about-card glass">
-                        <h3 class="about-heading">Philosophy</h3>
-                        <p class="quote">“在追求后端系统高并发与安全性的同时，也极度关注前端的交互动效与视觉美感。”</p>
-                        <div class="brand-signature">saudademjj · MJ</div>
-                    </div>
-                </div>
-            </section>
-
-            <footer class="main-footer reveal">
-                <div class="footer-line"></div>
-                <div class="footer-content">
-                    <p>© 2024 MJ. Designed for the future.</p>
-                    <div class="footer-links">
-                        <a href="https://github.com/saudademjj" target="_blank" class="social-icon-btn">
-                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                            <span>GitHub</span>
-                        </a>
-                        <a href="mailto:noreply@example.com" class="social-icon-btn">
-                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                            <span>Contact</span>
-                        </a>
-                    </div>
-                </div>
-            </footer>
-        </main>
+      <div class="header-controls">
+        <button type="button" class="ctrl-btn" id="lang-toggle" aria-label="Switch language">EN</button>
+        <button type="button" class="ctrl-btn" id="theme-toggle" aria-label="Toggle color theme">
+          <span class="theme-icon-sun" aria-hidden="true">☀</span>
+          <span class="theme-icon-moon" aria-hidden="true">☾</span>
+        </button>
+        <a href="https://github.com/saudademjj" target="_blank" rel="noopener noreferrer" class="gh-pill">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" aria-hidden="true">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+          <span>GitHub</span>
+        </a>
+      </div>
     </div>
+  </header>
 
-    <script>
-        // 滚动揭露动画
-        const observerOptions = {
-            threshold: 0.1
-        };
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="eyebrow">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span data-zh="独立开源产品 · saudade.me" data-en="Independent Open-Source · saudade.me">独立开源产品 · saudade.me</span>
+        </div>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
+        <h1 class="hero-title"
+            data-zh="独立开源产品与工程工具。"
+            data-en="Small, self-contained open-source products.">
+          独立开源产品与工程工具。
+        </h1>
 
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        <p class="hero-lead"
+           data-zh="我是 saudademjj，专注构建轻量、可靠、开箱即用的独立开源软件，覆盖桌面端应用、开发者工具、AI Agent Skill 与全栈 Web 应用。"
+           data-en="I'm saudademjj. I build practical, self-contained open-source software across desktop apps, developer tooling, AI agent skills, and full-stack web applications.">
+          我是 saudademjj，专注构建轻量、可靠、开箱即用的独立开源软件，覆盖桌面端应用、开发者工具、AI Agent Skill 与全栈 Web 应用。
+        </p>
 
-        // ScrollSpy Logic: 修复侧边栏高亮问题
-        const navItems = document.querySelectorAll('.nav-item');
-        const sections = document.querySelectorAll('section');
+        <div class="hero-actions">
+          <a href="#products" class="btn-primary" data-zh="浏览主打产品" data-en="Explore Products">浏览主打产品</a>
+          <a href="https://github.com/saudademjj" target="_blank" rel="noopener noreferrer" class="btn-secondary" data-zh="访问 GitHub 主页" data-en="GitHub Profile">访问 GitHub 主页</a>
+        </div>
 
-        function scrollSpy() {
-            let currentSectionId = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.scrollY >= sectionTop - 200) {
-                    currentSectionId = section.getAttribute('id');
-                }
-            });
+        <div class="metrics-strip">
+          <div class="metric-cell">
+            <span class="metric-val">4</span>
+            <span class="metric-label" data-zh="主打开源产品" data-en="Flagship Products">主打开源产品</span>
+          </div>
+          <div class="metric-cell">
+            <span class="metric-val">11</span>
+            <span class="metric-label" data-zh="公开源码仓库" data-en="Public Repositories">公开源码仓库</span>
+          </div>
+          <div class="metric-cell">
+            <span class="metric-val">11+</span>
+            <span class="metric-label" data-zh="知名项目 PR 合入" data-en="Merged Upstream PRs">知名项目 PR 合入</span>
+          </div>
+          <div class="metric-cell">
+            <span class="metric-val">Rust / TS / Go</span>
+            <span class="metric-label" data-zh="核心工程技术栈" data-en="Primary Stack">核心工程技术栈</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            navItems.forEach(item => {
-                item.classList.remove('active');
-                if (item.getAttribute('href').slice(1) === currentSectionId) {
-                    item.classList.add('active');
-                }
-            });
-        }
+    <!-- Flagship Open-Source Products -->
+    <section id="products" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">01 / PRODUCTS</span>
+            <h2 class="section-title" data-zh="主打开源产品" data-en="Open-Source Products">主打开源产品</h2>
+          </div>
+          <p class="section-note"
+             data-zh="可直接下载、在线体验或集成到工作流的独立发布作品。"
+             data-en="Shipped software you can install, run in the browser, or wire into your workflow.">
+            可直接下载、在线体验或集成到工作流的独立发布作品。
+          </p>
+        </div>
 
-        window.addEventListener('scroll', scrollSpy);
-        window.addEventListener('load', scrollSpy);
-    </script>
+        <div class="products-grid">
+          <!-- Islet -->
+          <article class="product-card">
+            <div class="product-top">
+              <span class="cat-badge cat-desktop" data-zh="桌面应用" data-en="Desktop App">桌面应用</span>
+              <span class="ver-pill">GPL-3.0 · v0.4.0</span>
+            </div>
+            <h3 class="product-name">Islet (草岛)</h3>
+            <p class="product-desc"
+               data-zh="小而快的跨平台 Minecraft Java 版启动器。基于 Rust 与 Tauri 原生构建，支持 Modrinth、CurseForge 与局域网房间码联机。"
+               data-en="A tiny, fast, cross-platform launcher for Minecraft: Java Edition. Native Rust & Tauri core with Modrinth, CurseForge, and room-code multiplayer.">
+              小而快的跨平台 Minecraft Java 版启动器。基于 Rust 与 Tauri 原生构建，支持 Modrinth、CurseForge 与局域网房间码联机。
+            </p>
+            <div class="tag-row">
+              <span>Rust</span><span>Tauri</span><span>React</span><span>Cross-Platform</span>
+            </div>
+            <div class="card-actions">
+              <a href="https://github.com/saudademjj/islet-launcher/releases/latest" target="_blank" rel="noopener noreferrer" class="action-main" data-zh="下载 Release" data-en="Download Release">下载 Release</a>
+              <a href="https://github.com/saudademjj/islet-launcher" target="_blank" rel="noopener noreferrer" class="action-sub" data-zh="查看源码" data-en="Source">查看源码</a>
+            </div>
+          </article>
+
+          <!-- luopan -->
+          <article class="product-card">
+            <div class="product-top">
+              <span class="cat-badge cat-ai" data-zh="AI Agent Skill" data-en="AI Agent Skill">AI Agent Skill</span>
+              <span class="ver-pill">MIT · v1.1.0</span>
+            </div>
+            <h3 class="product-name">luopan (罗盘)</h3>
+            <p class="product-desc"
+               data-zh="旅游行程规划 Skill：预算必问、范围红线、门票与开放时间强制附带官方来源与查询日期，输出前逐条自检，支持插件市场一键安装。"
+               data-en="Travel itinerary planning skill with budget gates, scope boundaries, official-source fact verification, and pre-delivery self-checks.">
+              旅游行程规划 Skill：预算必问、范围红线、门票与开放时间强制附带官方来源与查询日期，输出前逐条自检，支持插件市场一键安装。
+            </p>
+            <div class="tag-row">
+              <span>Agent Skill</span><span>Marketplace</span><span>Source-Verified</span>
+            </div>
+            <div class="card-actions">
+              <a href="/luopan/" class="action-main" data-zh="在线文档" data-en="Read Docs">在线文档</a>
+              <a href="https://github.com/saudademjj/luopan" target="_blank" rel="noopener noreferrer" class="action-sub" data-zh="查看源码" data-en="Source">查看源码</a>
+            </div>
+          </article>
+
+          <!-- drizzle-migration-guard -->
+          <article class="product-card">
+            <div class="product-top">
+              <span class="cat-badge cat-tool" data-zh="开发者工具" data-en="Developer Tool">开发者工具</span>
+              <span class="ver-pill">MIT · v1.0.0</span>
+            </div>
+            <h3 class="product-name">drizzle-migration-guard</h3>
+            <p class="product-desc"
+               data-zh="面向 Drizzle ORM 的 GitHub Action，在 Pull Request 阶段自动识别多分支迁移索引冲突，并直接生成可读的修复说明。"
+               data-en="GitHub Action that detects Drizzle ORM migration collisions across branches and explains how to resolve them directly in pull requests.">
+              面向 Drizzle ORM 的 GitHub Action，在 Pull Request 阶段自动识别多分支迁移索引冲突，并直接生成可读的修复说明。
+            </p>
+            <div class="tag-row">
+              <span>TypeScript</span><span>GitHub Actions</span><span>Drizzle ORM</span>
+            </div>
+            <div class="card-actions">
+              <a href="https://github.com/saudademjj/drizzle-migration-guard/releases/latest" target="_blank" rel="noopener noreferrer" class="action-main" data-zh="查看发布" data-en="Latest Release">查看发布</a>
+              <a href="https://github.com/saudademjj/drizzle-migration-guard" target="_blank" rel="noopener noreferrer" class="action-sub" data-zh="查看源码" data-en="Source">查看源码</a>
+            </div>
+          </article>
+
+          <!-- AERO COURT -->
+          <article class="product-card">
+            <div class="product-top">
+              <span class="cat-badge cat-web" data-zh="网页游戏" data-en="Web Game">网页游戏</span>
+              <span class="ver-pill">Zero-Deps · Live</span>
+            </div>
+            <h3 class="product-name">AERO COURT (羽翼球馆)</h3>
+            <p class="product-desc"
+               data-zh="零构建依赖的 HD-2D 等轴视角 24 小时羽毛球馆经营模拟游戏，采用纯实色无边框架构与模块化 Canvas 渲染，打开浏览器即可离线游玩。"
+               data-en="Zero-dependency HD-2D isometric 24H badminton hall tycoon built with pure solid-color HTML5 Canvas architecture. Instant play in the browser.">
+              零构建依赖的 HD-2D 等轴视角 24 小时羽毛球馆经营模拟游戏，采用纯实色无边框架构与模块化 Canvas 渲染，打开浏览器即可离线游玩。
+            </p>
+            <div class="tag-row">
+              <span>JavaScript</span><span>HTML5 Canvas</span><span>Isometric 2D</span>
+            </div>
+            <div class="card-actions">
+              <a href="/aero-court-tycoon/" class="action-main" data-zh="在线试玩" data-en="Play Online">在线试玩</a>
+              <a href="https://github.com/saudademjj/aero-court-tycoon" target="_blank" rel="noopener noreferrer" class="action-sub" data-zh="查看源码" data-en="Source">查看源码</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- More Projects -->
+    <section id="projects" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">02 / MORE PROJECTS</span>
+            <h2 class="section-title" data-zh="全栈应用与基础设施" data-en="Full-Stack & Systems">全栈应用与基础设施</h2>
+          </div>
+          <p class="section-note"
+             data-zh="覆盖端到端加密通信、营养数据库解析、空间记忆与高并发预约系统。"
+             data-en="End-to-end encrypted messaging, nutrition tracking, geospatial journaling, and REST APIs.">
+            覆盖端到端加密通信、营养数据库解析、空间记忆与高并发预约系统。
+          </p>
+        </div>
+
+        <div class="project-list">
+          <a href="https://github.com/saudademjj/message" target="_blank" rel="noopener noreferrer" class="project-row">
+            <div class="row-main">
+              <div class="row-title-line">
+                <span class="row-name">message</span>
+                <span class="row-type" data-zh="端到端加密聊天" data-en="E2EE Chat">端到端加密聊天</span>
+              </div>
+              <p class="row-desc"
+                 data-zh="零知识中继架构：Go WebSocket 服务端仅转发密文，React 19 + Web Crypto API 在客户端完成 RSA-OAEP / AES-GCM 全流程加解密。"
+                 data-en="Zero-knowledge relay in Go WebSocket with client-side RSA-OAEP & AES-GCM encryption via React 19 and Web Crypto API.">
+                零知识中继架构：Go WebSocket 服务端仅转发密文，React 19 + Web Crypto API 在客户端完成 RSA-OAEP / AES-GCM 全流程加解密。
+              </p>
+            </div>
+            <div class="row-meta">
+              <span class="row-stack">Go · React 19 · Web Crypto</span>
+              <span class="row-arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+
+          <a href="https://github.com/saudademjj/fitness-food" target="_blank" rel="noopener noreferrer" class="project-row">
+            <div class="row-main">
+              <div class="row-title-line">
+                <span class="row-name">fitness-food</span>
+                <span class="row-type" data-zh="AI 营养分析" data-en="Nutrition Tracker">AI 营养分析</span>
+              </div>
+              <p class="row-desc"
+                 data-zh="面向中文饮食的自然语言记录系统，优先检索 PostgreSQL 营养数据库并结合多路 AI 校验，输出 23 项营养素追踪数据。"
+                 data-en="Natural-language Chinese meal logger backed by PostgreSQL nutrition records and AI parsing for 23-dimension nutrient tracking.">
+                面向中文饮食的自然语言记录系统，优先检索 PostgreSQL 营养数据库并结合多路 AI 校验，输出 23 项营养素追踪数据。
+              </p>
+            </div>
+            <div class="row-meta">
+              <span class="row-stack">Next.js 15 · PostgreSQL · Qwen AI</span>
+              <span class="row-arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+
+          <a href="https://github.com/saudademjj/Lovejournal-New" target="_blank" rel="noopener noreferrer" class="project-row">
+            <div class="row-main">
+              <div class="row-title-line">
+                <span class="row-name">Lovejournal-New</span>
+                <span class="row-type" data-zh="空间记忆日志" data-en="Spatial Journal">空间记忆日志</span>
+              </div>
+              <p class="row-desc"
+                 data-zh="结合时间线与地理空间索引的个人记录应用，支持 Markdown 日记、EXIF 坐标解析与 PostgreSQL GIST 地图聚合查询。"
+                 data-en="Personal memory journal uniting timelines, EXIF photo galleries, and PostgreSQL GIST geospatial map clustering.">
+                结合时间线与地理空间索引的个人记录应用，支持 Markdown 日记、EXIF 坐标解析与 PostgreSQL GIST 地图聚合查询。
+              </p>
+            </div>
+            <div class="row-meta">
+              <span class="row-stack">FastAPI · React · PostgreSQL</span>
+              <span class="row-arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+
+          <a href="https://github.com/saudademjj/library" target="_blank" rel="noopener noreferrer" class="project-row">
+            <div class="row-main">
+              <div class="row-title-line">
+                <span class="row-name">library</span>
+                <span class="row-type" data-zh="座位预约平台" data-en="Seat Reservation">座位预约平台</span>
+              </div>
+              <p class="row-desc"
+                 data-zh="基于 Next.js 16、Hono 与 Drizzle ORM 的全栈预约系统，支持无冲突选座、QR 码签到、RBAC 权限控制与完整自动化 CI。"
+                 data-en="Full-stack seat reservation & QR check-in platform with role-based access control and full automated CI.">
+                基于 Next.js 16、Hono 与 Drizzle ORM 的全栈预约系统，支持无冲突选座、QR 码签到、RBAC 权限控制与完整自动化 CI。
+              </p>
+            </div>
+            <div class="row-meta">
+              <span class="row-stack">Next.js 16 · Hono · Drizzle</span>
+              <span class="row-arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+
+          <a href="https://github.com/saudademjj/bookshelf" target="_blank" rel="noopener noreferrer" class="project-row">
+            <div class="row-main">
+              <div class="row-title-line">
+                <span class="row-name">bookshelf</span>
+                <span class="row-type" data-zh="轻量 REST API" data-en="REST API">轻量 REST API</span>
+              </div>
+              <p class="row-desc"
+                 data-zh="采用 Bun 运行时、Hono、Drizzle ORM、SQLite 与 Zod 校验构建的轻量个人图书管理后端接口。"
+                 data-en="Lightweight personal book management REST API powered by Bun, Hono, Drizzle ORM, SQLite, and Zod validation.">
+                采用 Bun 运行时、Hono、Drizzle ORM、SQLite 与 Zod 校验构建的轻量个人图书管理后端接口。
+              </p>
+            </div>
+            <div class="row-meta">
+              <span class="row-stack">Bun · Hono · SQLite · Zod</span>
+              <span class="row-arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upstream Contributions -->
+    <section id="upstream" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">03 / UPSTREAM</span>
+            <h2 class="section-title" data-zh="上游开源贡献" data-en="Upstream Contributions">上游开源贡献</h2>
+          </div>
+          <p class="section-note"
+             data-zh="已合入主流开源仓库的代表性 Pull Requests。"
+             data-en="Selected merged pull requests across established open-source repositories.">
+            已合入主流开源仓库的代表性 Pull Requests。
+          </p>
+        </div>
+
+        <div class="pr-grid">
+          <a href="https://github.com/pandas-dev/pandas/pull/64649" target="_blank" rel="noopener noreferrer" class="pr-chip">
+            <span class="pr-repo">pandas-dev/pandas</span>
+            <span class="pr-num">#64649</span>
+          </a>
+          <a href="https://github.com/renovatebot/renovate/pull/42012" target="_blank" rel="noopener noreferrer" class="pr-chip">
+            <span class="pr-repo">renovatebot/renovate</span>
+            <span class="pr-num">#42012</span>
+          </a>
+          <a href="https://github.com/super-productivity/super-productivity/pull/6885" target="_blank" rel="noopener noreferrer" class="pr-chip">
+            <span class="pr-repo">super-productivity</span>
+            <span class="pr-num">#6885</span>
+          </a>
+          <a href="https://github.com/rjsf-team/react-jsonschema-form/pull/4994" target="_blank" rel="noopener noreferrer" class="pr-chip">
+            <span class="pr-repo">react-jsonschema-form</span>
+            <span class="pr-num">#4994</span>
+          </a>
+          <a href="https://github.com/orhun/git-cliff/pull/1450" target="_blank" rel="noopener noreferrer" class="pr-chip">
+            <span class="pr-repo">orhun/git-cliff</span>
+            <span class="pr-num">#1450</span>
+          </a>
+          <a href="https://github.com/Flagsmith/flagsmith/pull/6993" target="_blank" rel="noopener noreferrer" class="pr-chip">
+            <span class="pr-repo">Flagsmith/flagsmith</span>
+            <span class="pr-num">#6993</span>
+          </a>
+          <a href="https://github.com/ngrx/platform/pull/5119" target="_blank" rel="noopener noreferrer" class="pr-chip">
+            <span class="pr-repo">ngrx/platform</span>
+            <span class="pr-num">#5119</span>
+          </a>
+          <a href="https://github.com/komodorio/helm-dashboard/pull/667" target="_blank" rel="noopener noreferrer" class="pr-chip">
+            <span class="pr-repo">komodorio/helm-dashboard</span>
+            <span class="pr-num">#667</span>
+          </a>
+          <a href="https://github.com/topoteretes/cognee/pull/2434" target="_blank" rel="noopener noreferrer" class="pr-chip">
+            <span class="pr-repo">topoteretes/cognee</span>
+            <span class="pr-num">#2434</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Engineering Principles -->
+    <section id="principles" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">04 / PRINCIPLES</span>
+            <h2 class="section-title" data-zh="工程与产品原则" data-en="Engineering Principles">工程与产品原则</h2>
+          </div>
+          <p class="section-note"
+             data-zh="贯穿所有独立开源项目的默认约束。"
+             data-en="Default constraints shared across every project.">
+            贯穿所有独立开源项目的默认约束。
+          </p>
+        </div>
+
+        <div class="principles-grid">
+          <div class="principle-card">
+            <span class="principle-idx">01</span>
+            <h3 data-zh="轻量与本地优先" data-en="Lightweight & Local-First">轻量与本地优先</h3>
+            <p data-zh="克制依赖膨胀，优先选择启动快、可离线运行、数据归用户所有的交付形态——无论是原生 Rust 桌面包还是零构建纯前端。"
+               data-en="Avoid dependency bloat and ship fast, offline-capable software where users keep ownership of their data.">
+              克制依赖膨胀，优先选择启动快、可离线运行、数据归用户所有的交付形态——无论是原生 Rust 桌面包还是零构建纯前端。
+            </p>
+          </div>
+
+          <div class="principle-card">
+            <span class="principle-idx">02</span>
+            <h3 data-zh="隐私与事实边界" data-en="Privacy & Verification">隐私与事实边界</h3>
+            <p data-zh="在架构层保障隐私（客户端加解密、零多余埋点），对 AI 输出强制事实来源核验与确定性数据库兜底，不靠黑盒碰运气。"
+               data-en="Enforce privacy at the architecture layer—client-side crypto, zero unnecessary tracking—and pair AI features with deterministic verification.">
+              在架构层保障隐私（客户端加解密、零多余埋点），对 AI 输出强制事实来源核验与确定性数据库兜底，不靠黑盒碰运气。
+            </p>
+          </div>
+
+          <div class="principle-card">
+            <span class="principle-idx">03</span>
+            <h3 data-zh="清晰、可复现的交付" data-en="Clear, Reproducible Releases">清晰、可复现的交付</h3>
+            <p data-zh="自动化 CI、明确版本发布与直白的技术文档优先于营销包装；开源问题反馈与协作统一通过各仓库 GitHub Issues / PRs 进行。"
+               data-en="Automated CI, reproducible releases, and plain technical documentation over hype. Feedback and collaboration happen directly in GitHub Issues and PRs.">
+              自动化 CI、明确版本发布与直白的技术文档优先于营销包装；开源问题反馈与协作统一通过各仓库 GitHub Issues / PRs 进行。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-left">
+        <span class="footer-brand">saudademjj</span>
+        <span class="footer-sep">·</span>
+        <span class="footer-copy" data-zh="独立开源作品目录 · MIT 许可" data-en="Independent Open-Source Index · MIT">独立开源作品目录 · MIT 许可</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/saudademjj" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="/luopan/">luopan</a>
+        <a href="/aero-court-tycoon/">AERO COURT</a>
+        <a href="https://github.com/saudademjj/saudademjj.github.io" target="_blank" rel="noopener noreferrer" data-zh="本站源码" data-en="Site Source">本站源码</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>

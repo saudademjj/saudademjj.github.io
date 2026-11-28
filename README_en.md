@@ -11,7 +11,7 @@ Source repository for [saudade.me](https://saudade.me/) — an index of independ
 - **Zero build step**: Static HTML, CSS, and vanilla JavaScript deployed directly via GitHub Pages on push to `main`.
 - **Solid-color design system**: Aligned with [saudade.me/luopan/](https://saudade.me/luopan/) typography and color tokens, supporting manual and system-level Dark / Light themes.
 - **Chinese & English toggle**: Instant client-side language switch persisted in `localStorage`, with zero third-party analytics or trackers.
-- **Product-first index**: Highlights flagship open-source products (`Islet`, `luopan`, `drizzle-migration-guard`, `AERO COURT`), full-stack projects, and merged upstream PRs.
+- **Product-first index**: Highlights flagship open-source products (`Islet`, `luopan`, `drizzle-migration-guard`), full-stack projects, and merged upstream PRs.
 
 ## Structure
 

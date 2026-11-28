@@ -11,7 +11,7 @@
 - **零构建依赖**：纯静态 HTML + CSS + 原生 JavaScript，推送到 `main` 分支即通过 GitHub Pages 自动部署。
 - **实色视觉体系**：与 [luopan 文档站](https://saudade.me/luopan/) 保持一致的配色与字体（`Plus Jakarta Sans` / `Noto Sans SC` / `JetBrains Mono`），内置深浅色主题切换并尊重系统偏好。
 - **中英文双语切换**：前端轻量切换，状态保存在本地 `localStorage`，无任何第三方埋点或统计脚本。
-- **产品导向目录**：聚合主打开源产品（`Islet`、`luopan`、`drizzle-migration-guard`、`AERO COURT`）、全栈项目与上游开源 PR 贡献。
+- **产品导向目录**：聚合主打开源产品（`Islet`、`luopan`、`drizzle-migration-guard`）、全栈项目与上游开源 PR 贡献。
 
 ## 文件结构
 
